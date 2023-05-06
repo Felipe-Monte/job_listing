@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 :root {
@@ -9,5 +10,53 @@
 }
 
 body {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 2rem;
+
   font-size: 1.6rem;
+}
+
+.app {
+  width: 50rem;
+  height: fit-content;
+  border: 1px solid red;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+  width: 100%;
+  height: 12rem;
+
+  padding: 40px;
+
+  background: linear-gradient(267.08deg, #79ACFA 0%, rgba(196, 16, 145, 0.5) 100%);
+  color: white;
+}
+
+header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+table {
+  width: 100%;
+  min-height: 100%;
+}
+
+table tbody tr {
+  width: 44rem;
+  height: 9rem;
+}
+
+table tbody td {
+  border: 2px solid green;
 }
