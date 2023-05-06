@@ -50,6 +50,8 @@ header h1 {
 table {
   width: 100%;
   min-height: 100%;
+
+  border-collapse: collapse;
 }
 
 table tbody tr {
@@ -59,4 +61,24 @@ table tbody tr {
 
 table tbody td {
   border: 2px solid green;
+}
+
+table tbody td.texts h2 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 3rem;
+
+  color: #000000;
+}
+
+table tbody td.texts p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 275;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  
+  color: #484848;
 }
