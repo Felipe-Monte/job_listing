@@ -47,11 +47,16 @@ header h1 {
   line-height: 4rem;
 }
 
+.container_table {
+  padding: 30px;
+}
+
 table {
   width: 100%;
   min-height: 100%;
-
-  border-collapse: collapse;
+  
+  border-collapse: separate;
+  border-spacing: 0 8px;
 }
 
 table tbody tr {
@@ -79,6 +84,30 @@ table tbody td.texts p {
   font-weight: 275;
   font-size: 1.3rem;
   line-height: 1.8rem;
-  
+
   color: #484848;
+}
+
+.logo {
+  width: 7rem;
+  text-align: center;
+}
+
+button {
+  display: block;
+
+  margin: auto;
+  width: 84px;
+  height: 43px;
+  
+  text-align: center;
+
+  color: white;
+  background: #2273EC;
+  border-radius: 10px;
+  border: none;
+}
+
+button:hover {
+  background: #164791;
 }
