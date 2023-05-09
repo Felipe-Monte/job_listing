@@ -54,9 +54,25 @@ header h1 {
 table {
   width: 100%;
   min-height: 100%;
-  
+
   border-collapse: separate;
   border-spacing: 0 8px;
+}
+
+table tr td:first-child {
+  border-top-left-radius: 20px;
+}
+
+table tr td:last-child {
+  border-top-right-radius: 20px;
+}
+
+table tr td:first-child {
+  border-bottom-left-radius: 20px;
+}
+
+table tr td:last-child {
+  border-bottom-right-radius: 20px;
 }
 
 table tbody tr {
@@ -93,13 +109,18 @@ table tbody td.texts p {
   text-align: center;
 }
 
+.logo img {
+  width: 6rem;
+  border-radius: 50%;
+}
+
 button {
   display: block;
 
   margin: auto;
   width: 84px;
   height: 43px;
-  
+
   text-align: center;
 
   color: white;
