@@ -21,6 +21,9 @@ body {
 .app {
   width: 50rem;
   height: fit-content;
+
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   border: 1px solid red;
 }
 
@@ -37,6 +40,10 @@ header {
 
   background: linear-gradient(267.08deg, #79ACFA 0%, rgba(196, 16, 145, 0.5) 100%);
   color: white;
+
+  
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 header h1 {
@@ -78,10 +85,11 @@ table tr td:last-child {
 table tbody tr {
   width: 44rem;
   height: 9rem;
+  background: #dedcdc;
 }
 
-table tbody td {
-  border: 2px solid green;
+table tbody tr td {
+  padding: 1rem;
 }
 
 table tbody td.texts h2 {
