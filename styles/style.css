@@ -54,6 +54,25 @@ header h1 {
   line-height: 4rem;
 }
 
+.input_wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  width: 100%;
+}
+
+.input_wrapper input {
+  text-indent: 1rem;
+
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+
+.input_wrapper button {
+  margin: 0;
+}
+
 .container_table {
   padding: 30px;
 }

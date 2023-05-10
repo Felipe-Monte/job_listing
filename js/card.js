@@ -1,3 +1,14 @@
+export class Github {
+  static search(username) {
+    const endpoint = `https://api.github.com/users/${username}`
+
+    return fetch(endpoint)
+      .then(data => data.json())
+      .then(data => {
+        console.log(data)
+      })
+  }
+}
 
 export class Card {
   constructor(root) {
@@ -9,17 +20,21 @@ export class Card {
     this.entries = [
       {
         name: "Felipe-Monte",
-        text: "Felipe text"
+        text_h1: "Carlos Felipe"
       },
       {
         name: "Jonas",
-        text: "Jonas text"
+        text_h1: "Jonas X"
       },
       {
         name: "Maria",
-        text: "Maria text"
+        text_h1: "Maria Edu"
       }
     ]
+  }
+
+  add(username) {
+    Github.search(username)
   }
 }
 
@@ -27,6 +42,16 @@ export class CardView extends Card {
   constructor(root) {
     super(root)
     this.render()
+    this.onSearch()
+  }
+
+  onSearch() {
+    const btn = this.root.querySelector('header button')
+    btn.onclick = () => {
+      const { value } = this.root.querySelector('.input_wrapper input')
+
+      this.add(value)
+    }
   }
 
   render() {
@@ -38,6 +63,11 @@ export class CardView extends Card {
       const tr = this.createRow()
 
       tr.querySelector('.logo img').src = `https://github.com/${user.name}.png`
+      tr.querySelector('.texts h2').textContent = `${user.text_h1}`
+
+      tr.querySelector('.btn_apply button').onclick = () => {
+        // alert('clicked on button')
+      }
 
       tbody.append(tr)
     })
