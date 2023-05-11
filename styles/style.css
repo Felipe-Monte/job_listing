@@ -75,6 +75,10 @@ header h1 {
   margin: 0;
 }
 
+.input_wrapper #clear {
+  width: 110px;
+}
+
 .container_table {
   padding: 30px;
 }

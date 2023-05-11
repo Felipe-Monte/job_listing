@@ -10,7 +10,6 @@ export class Github {
         public_repos,
         followers
       }))
-    
   }
 }
 
@@ -57,6 +56,7 @@ export class CardView extends Card {
     super(root)
     this.render()
     this.onSearch()
+    this.removeAllUserList()
   }
 
   onSearch() {
@@ -65,6 +65,21 @@ export class CardView extends Card {
       const { value } = this.root.querySelector('.input_wrapper input')
 
       this.add(value)
+    }
+  }
+
+  removeAllUserList() {
+    this.root.querySelector('#clear').onclick = () => {
+
+      const removeIt = confirm("Remove all favorites ?")
+
+      if (removeIt) {
+        this.deleteAllTr()
+        this.entries = []
+        this.save()
+      } else {
+        return
+      }
     }
   }
 
@@ -78,7 +93,6 @@ export class CardView extends Card {
 
       tr.querySelector('.logo img').src = `https://github.com/${user.login}.png`
       tr.querySelector('.texts h2').textContent = `${user.text_h1}`
-
       tr.querySelector('.btn_apply button').onclick = () => {
         // alert('clicked on button')
       }
