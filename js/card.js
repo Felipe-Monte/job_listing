@@ -4,9 +4,13 @@ export class Github {
 
     return fetch(endpoint)
       .then(data => data.json())
-      .then(data => {
-        console.log(data)
-      })
+      .then(({ login, name, public_repos, followers }) => ({
+        login,
+        name,
+        public_repos,
+        followers
+      }))
+    
   }
 }
 
@@ -17,24 +21,34 @@ export class Card {
   }
 
   load() {
-    this.entries = [
-      {
-        name: "Felipe-Monte",
-        text_h1: "Carlos Felipe"
-      },
-      {
-        name: "Jonas",
-        text_h1: "Jonas X"
-      },
-      {
-        name: "Maria",
-        text_h1: "Maria Edu"
-      }
-    ]
+    this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
   }
 
-  add(username) {
-    Github.search(username)
+  save() {
+    localStorage.setItem('@github-favorites:', JSON.stringify(this.entries))
+  }
+
+  async add(username) {
+    try {
+      const userExist = this.entries.find(entry => entry.login === username)
+
+      if (userExist) {
+        throw new Error("Usuário ja cadastrado!")
+      }
+
+      const user = await Github.search(username)
+
+      if (user.login === undefined) {
+        throw new Error("Usuário não encontrado!")
+      }
+
+      this.entries = [user, ...this.entries]
+      this.render()
+      this.save()
+
+    } catch (error) {
+      alert(error.message)
+    }
   }
 }
 
@@ -62,7 +76,7 @@ export class CardView extends Card {
       const tbody = this.root.querySelector('table tbody')
       const tr = this.createRow()
 
-      tr.querySelector('.logo img').src = `https://github.com/${user.name}.png`
+      tr.querySelector('.logo img').src = `https://github.com/${user.login}.png`
       tr.querySelector('.texts h2').textContent = `${user.text_h1}`
 
       tr.querySelector('.btn_apply button').onclick = () => {
