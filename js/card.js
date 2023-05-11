@@ -94,7 +94,7 @@ export class CardView extends Card {
       tr.querySelector('.logo img').src = `https://github.com/${user.login}.png`
       tr.querySelector('.texts h2').textContent = `${user.text_h1}`
       tr.querySelector('.btn_apply button').onclick = () => {
-        // alert('clicked on button')
+        alert("working on this feature")
       }
 
       tbody.append(tr)
