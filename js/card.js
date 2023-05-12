@@ -56,7 +56,6 @@ export class CardView extends Card {
     super(root)
     this.render()
     this.onSearch()
-    this.removeAllUserList()
   }
 
   onSearch() {
@@ -86,6 +85,7 @@ export class CardView extends Card {
   render() {
     this.deleteAllTr()
     this.createRow()
+    this.removeAllUserList()
 
     this.entries.forEach(user => {
       const tbody = this.root.querySelector('table tbody')
@@ -93,6 +93,7 @@ export class CardView extends Card {
 
       tr.querySelector('.logo img').src = `https://github.com/${user.login}.png`
       tr.querySelector('.texts h2').textContent = `${user.text_h1}`
+
       tr.querySelector('.btn_apply button').onclick = () => {
         alert("working on this feature")
       }
