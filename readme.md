@@ -19,3 +19,4 @@ Falta adicionar:
 - funcionalidade ao button apply
 - dark mode 
 - Impedir cadastro do mesmo usuário
+- Media query
