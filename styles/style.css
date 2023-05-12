@@ -111,6 +111,12 @@ table tbody tr {
   width: 44rem;
   height: 9rem;
   background: #dedcdc;
+
+  transition: all .3s ease;
+}
+
+table tbody tr:hover {
+  transform: scale(1.1);
 }
 
 table tbody tr td {
