@@ -92,7 +92,7 @@ export class CardView extends Card {
       const tr = this.createRow()
 
       tr.querySelector('.logo img').src = `https://github.com/${user.login}.png`
-      tr.querySelector('.texts h2').textContent = `${user.text_h1}`
+      tr.querySelector('.texts h2').textContent = `${user.name}`
 
       tr.querySelector('.btn_apply button').onclick = () => {
         alert("working on this feature")
