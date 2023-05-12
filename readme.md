@@ -14,3 +14,8 @@
 
 Clique no link e tenha acesso ao app
 [Job Listing](https://job-listing-3ttbu6lv0-felipe-monte.vercel.app/)
+
+Falta adicionar:
+- funcionalidade ao button apply
+- dark mode 
+- Impedir cadastro do mesmo usuário
