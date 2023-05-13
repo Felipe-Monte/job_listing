@@ -4,11 +4,13 @@ export class Github {
 
     return fetch(endpoint)
       .then(data => data.json())
-      .then(({ login, name, public_repos, followers }) => ({
+      .then(({ login, name, public_repos, followers, bio, location }) => ({
         login,
         name,
         public_repos,
-        followers
+        followers,
+        bio,
+        location
       }))
   }
 }
@@ -93,6 +95,8 @@ export class CardView extends Card {
 
       tr.querySelector('.logo img').src = `https://github.com/${user.login}.png`
       tr.querySelector('.texts h2').textContent = `${user.name}`
+      tr.querySelector('.texts .description').textContent = `${user.bio}`
+      tr.querySelector('.texts .location').textContent = `${user.location}`
 
       tr.querySelector('.btn_apply button').onclick = () => {
         alert("working on this feature")
@@ -108,8 +112,8 @@ export class CardView extends Card {
     <td class="logo"><img src="https://github.com/Felipe-Monte.png" alt="img_logo"></td>
     <td class="texts">
       <h2>User interaction</h2>
-      <p>Google - 1600 amphitheatre parkway</p>
-      <p>Posted 5 days ago</p>
+      <p class='description'>Google - 1600 amphitheatre parkway</p>
+      <p class='location'>Posted 5 days ago</p>
     </td>
     <td class="btn_apply"><button>Apply</button></td>
     `
