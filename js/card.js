@@ -46,6 +46,7 @@ export class Card {
       this.entries = [user, ...this.entries]
       this.render()
       this.save()
+      this.clearInput()
 
     } catch (error) {
       alert(error.message)
@@ -60,10 +61,16 @@ export class CardView extends Card {
     this.onSearch()
   }
 
+  clearInput() {
+    const input = this.root.querySelector('.input_wrapper input')
+    input.value = ''
+    input.focus()
+  }
+
   onSearch() {
     const btn = this.root.querySelector('header button')
     btn.onclick = () => {
-      const { value } = this.root.querySelector('.input_wrapper input')
+      let { value } = this.root.querySelector('.input_wrapper input')
 
       this.add(value)
     }
